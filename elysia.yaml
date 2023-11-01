@@ -1,0 +1,21 @@
+namespace: elysia
+elysia:
+  defines: runnable
+  metadata:
+    name: elysia
+    description: >-
+      Elysia is an ergonomic Framework for Humans, used in building fast HTTP
+      and websocket server applications.
+    icon: https://emojiapi.dev/api/v1/robot.svg
+  containers:
+    elysia:
+      build: .
+      dockerfile: generate
+  services:
+    http:
+      container: elysia
+      port: 8080
+      host-port: 8080
+      publish: false
+      protocol: TCP
+      description: Primary HTTP connection port for the application
